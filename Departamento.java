@@ -1,4 +1,4 @@
-public class Departamento {
+public class Departamento{
     public String nombre;
     public String codigo;
 
