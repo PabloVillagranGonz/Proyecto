@@ -1,13 +1,15 @@
+import java.awt.*;
 import java.util.Scanner;
 
-public class MenuGeneral {
+public class MenuGeneral extends MenuAdmin {
     Scanner in=new Scanner(System.in);
+        String codigo;
+        String nombDepart;
         int resp=0;
         int opcionAdmin=0;
         int opcionDepart=0;
         int contrasena = 13245;
         int adminContr;
-        String nombDepart;
 
     public void escribir() {
             do {
@@ -32,7 +34,6 @@ public class MenuGeneral {
                         if (adminContr == contrasena) {
                             System.out.println("1. Listar departamentos");
                             System.out.println("2. Añadir departamentos");
-
                             System.out.println("3. Eliminar departamentos");
                             System.out.println("4. Listar salas");
                             System.out.println("5. Añadir salas");

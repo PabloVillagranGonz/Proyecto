@@ -8,7 +8,7 @@ public class MenuAdmin {
             System.out.println("-"+departamentos[i]);
         }
     }
-    public void añadirDepartamento(String nombre, String codigo){
+    public void anadirDepartamento(String nombre, String codigo){
         boolean valido = true;
         for (int i = 0; i < cont; i++) {
             if (this.departamentos[i].nombre.equalsIgnoreCase(nombre)){
@@ -19,7 +19,7 @@ public class MenuAdmin {
                 this.departamentos[cont].nombre = nombre;
             }
         }
-        if (codigo.length() < 3 || codigo.length() > 3){
+        if (codigo.length() != 3){
             valido = false;
         }
         else {
