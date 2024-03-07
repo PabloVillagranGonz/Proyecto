@@ -8,7 +8,7 @@ public class MenuGeneral extends MenuAdmin {
         int resp;
         int opcionAdmin=0;
         int opcionDepart=0;
-        int contrasena = 13245;
+        int contrasena = 12345;
         int adminContr;
 
     public void escribir() {
