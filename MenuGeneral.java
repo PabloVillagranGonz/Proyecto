@@ -5,7 +5,7 @@ public class MenuGeneral extends MenuAdmin {
     Scanner in=new Scanner(System.in);
         String codigo;
         String nombDepart;
-        int resp=0;
+        String resp;
         int opcionAdmin=0;
         int opcionDepart=0;
         int contrasena = 13245;
@@ -13,55 +13,51 @@ public class MenuGeneral extends MenuAdmin {
 
     public void escribir() {
             do {
-                try {
-                    System.out.println(
+                System.out.println(
                             "--------MENU------\n" +
                                     "1. Login de administrador\n" +
                                     "2. Login de departamento\n" +
                                     "3. Cerrar"
                     );
                     System.out.println("Elige la opción deseada");
-                    resp = Integer.parseInt(in.nextLine());
-
-                } catch (NumberFormatException e) {
-                    System.out.println("Número no válido, pulse intro para continuar");
-                    in.nextLine();
-                }
+                    resp = in.nextLine();
                 do {
-                    if (resp == 1) {
+                    if (resp.equalsIgnoreCase("1")) {
                         System.out.println("Escribe la contraseña (Solo sirven numeros)");
                         adminContr = Integer.parseInt(in.nextLine());
                         if (adminContr == contrasena) {
-                            System.out.println("1. Listar departamentos");
-                            System.out.println("2. Añadir departamentos");
-                            System.out.println("3. Eliminar departamentos");
-                            System.out.println("4. Listar salas");
-                            System.out.println("5. Añadir salas");
-                            System.out.println("6. Eliminar salas");
-                            System.out.println("7. Listar todas las reservas");
-                            System.out.println("8. Cerrar sesion (vuelta al menu inicio)");
+                            System.out.println("1. Listar departamentos\n"+
+                                    "2. Añadir departamentos\n"+
+                                    "3. Eliminar departamentos\n"+
+                                    "4. Listar salas\n"+
+                                    "5. Añadir salas\n"+
+                                    "6. Eliminar salas\n"+
+                                    "7. Listar todas las reservas\n"+
+                                    "8. Cerrar sesion (vuelta al menu inicio)");
                             opcionAdmin = Integer.parseInt(in.nextLine());
                         } else {
                             System.out.println("Con esa contraseña no se puede acceder");
                         }
-                    } else if (resp == 2) {
+                    }
+                    else if (resp.equalsIgnoreCase("2")) {
                         do {
                             System.out.println("Escribe el departamento que eres (Maximo 3 letras)");
                             nombDepart = in.nextLine();
                             if (nombDepart.length() == 3) {
-                                System.out.println("1. Añadir reserva");
-                                System.out.println("2. Cancelar reserva");
-                                System.out.println("3. Listar todas las reserva");
-                                System.out.println("4. Cerrar sesion");
+                                System.out.println("1. Añadir reserva\n"+
+                                        "2. Cancelar reserva\n"+
+                                        "3. Listar todas las reserva\n"+
+                                        "4. Cerrar sesion");
                                 opcionDepart = Integer.parseInt(in.nextLine());
-                            } else {
+                            }
+
+                            else {
                                 System.out.println("No estas escribiendo bien el departamento");
                             }
                         } while (opcionDepart != 4);
                     }
                 } while (opcionAdmin != 8);
-            }
-            while (resp != 3);
+            } while (resp.equalsIgnoreCase("3"));
         in.close();
 
     }
