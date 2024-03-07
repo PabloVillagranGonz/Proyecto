@@ -5,7 +5,7 @@ public class MenuGeneral extends MenuAdmin {
     Scanner in=new Scanner(System.in);
         String codigo;
         String nombDepart;
-        String resp;
+        int resp;
         int opcionAdmin=0;
         int opcionDepart=0;
         int contrasena = 13245;
@@ -20,9 +20,9 @@ public class MenuGeneral extends MenuAdmin {
                                     "3. Cerrar"
                     );
                     System.out.println("Elige la opción deseada");
-                    resp = in.nextLine();
+                    resp = Integer.parseInt(in.nextLine());
                 do {
-                    if (resp.equalsIgnoreCase("1")) {
+                    if (resp==1) {
                         System.out.println("Escribe la contraseña (Solo sirven numeros)");
                         adminContr = Integer.parseInt(in.nextLine());
                         if (adminContr == contrasena) {
@@ -39,7 +39,7 @@ public class MenuGeneral extends MenuAdmin {
                             System.out.println("Con esa contraseña no se puede acceder");
                         }
                     }
-                    else if (resp.equalsIgnoreCase("2")) {
+                    else if (resp==2) {
                         do {
                             System.out.println("Escribe el departamento que eres (Maximo 3 letras)");
                             nombDepart = in.nextLine();
@@ -57,7 +57,7 @@ public class MenuGeneral extends MenuAdmin {
                         } while (opcionDepart != 4);
                     }
                 } while (opcionAdmin != 8);
-            } while (resp.equalsIgnoreCase("3"));
+            } while (resp!=3);
         in.close();
 
     }

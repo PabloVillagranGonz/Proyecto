@@ -11,20 +11,39 @@ public class MenuAdmin {
     public void anadirDepartamento(String nombre, String codigo){
         boolean valido = true;
         for (int i = 0; i < cont; i++) {
-            if (this.departamentos[i].nombre.equalsIgnoreCase(nombre)){
+            if (departamentos[i].nombre.equalsIgnoreCase(nombre)){
                 valido = false;
                 System.out.println("Este nombre ya existe");
             }
             else {
-                this.departamentos[cont].nombre = nombre;
+                departamentos[cont].nombre = nombre;
             }
         }
         if (codigo.length() != 3){
             valido = false;
         }
         else {
-            this.departamentos[cont].codigo = nombre;
+            departamentos[cont].codigo = nombre;
         }
         cont++;
+    }
+    public void eliminarDepartamento(String nombre, String codigo){
+        int i = 0;
+        boolean encontrado = false;
+            while (i < cont && !encontrado){
+                if (departamentos[i].nombre.equalsIgnoreCase(nombre)){
+                    for (int j = i; j<cont -1; j++){
+                        departamentos[j] = departamentos[j+1];
+                    }
+                    cont--;
+                }
+                else
+                    i++;
+            }
+    }
+    public void listarSalas(){
+        for (int i = 0; i < cont; i++) {
+            System.out.println("-"+salas[i]);
+        }
     }
 }
