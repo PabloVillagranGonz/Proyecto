@@ -6,6 +6,7 @@ public class Proyecto extends MenuGeneral{
         MenuGeneral menu= new MenuGeneral();
 
         menu.escribir();
+
         in.close();
     }
 }
