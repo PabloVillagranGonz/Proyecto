@@ -8,6 +8,11 @@ public class Departamento{
     public String nombre;
     public String codigo;
 
+    public Departamento (String nombre, String codigo){
+        this.nombre = nombre;
+        this.codigo = codigo;
+    }
+
     public void anadirReserva(){
         Scanner in = new Scanner(System.in);
         String fecha = new String();

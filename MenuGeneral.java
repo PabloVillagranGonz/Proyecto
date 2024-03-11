@@ -38,7 +38,7 @@ public class MenuGeneral extends MenuAdmin {
                                     "8. Cerrar sesion (vuelta al menu inicio)");
                             opcionAdmin = Integer.parseInt(in.nextLine());
                             if (opcionAdmin == 1){
-                                listarDepartamento();
+                                listarDep();
                             } else if (opcionAdmin == 2) {
                                 System.out.println("Escribe el codigo (MAX 3 LETRAS)");
                                 codigoDepart = in.nextLine();
@@ -48,7 +48,7 @@ public class MenuGeneral extends MenuAdmin {
                             } else if (opcionAdmin == 3) {
                                 System.out.println("Escribe el codigo del departamento que deseas eliminar");
                                 codigoDepart = in.nextLine();
-                                eliminarDepartamento(codigoDepart, nombDepart);
+                                eliminarDep(codigoDepart);
                             } else if (opcionAdmin == 4) {
                                 listarSalas();
                             } else if (opcionAdmin == 5) {
