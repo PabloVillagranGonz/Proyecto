@@ -6,7 +6,6 @@ import java.util.Iterator;
 public class MenuAdmin {
     public ArrayList<Departamento> departamentos = new ArrayList<>();
     public ArrayList<Sala> salas = new ArrayList<>();
-    public int cont = 0;
     String codigoDepart;
     String codigoSala;
     String nombDepart;
@@ -44,7 +43,7 @@ public class MenuAdmin {
 
         // Añadir el departamento si es válido
         if (valido) {
-            this.departamentos.add(new Departamento(nombre, codigo));
+            departamentos.add(new Departamento(nombre, codigo));
             System.out.println("Departamento añadido con éxito.");
         }
     }

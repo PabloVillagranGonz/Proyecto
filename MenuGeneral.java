@@ -3,8 +3,10 @@ import java.util.Scanner;
 
 public class MenuGeneral extends MenuAdmin {
     Scanner in = new Scanner(System.in);
+    Reservas reservas = new Reservas();
     int contrasena = 12345;
     int adminContr;
+
 
     public void escribir() {
         do {
@@ -63,8 +65,7 @@ public class MenuGeneral extends MenuAdmin {
                         System.out.println("Con esa contraseña no se puede acceder");
                     }
 
-                }
-                    while (opcionAdmin != 8) ;
+                } while (opcionAdmin != 8) ;
             } if (resp == 2) {
                 do {
                     System.out.println("Escribe el departamento que eres (Maximo 3 letras)");
@@ -75,6 +76,13 @@ public class MenuGeneral extends MenuAdmin {
                                 "3. Listar todas las reserva\n" +
                                 "4. Cerrar sesion");
                         opcionDepart = Integer.parseInt(in.nextLine());
+                        if (opcionDepart == 1){
+                            reservas.anadirReserva();
+                        } else if (opcionDepart == 2){
+                            reservas.eliminarReserva();
+                        } else if (opcionDepart == 3){
+                            reservas.listarReservas();
+                        }
                     } else {
                         System.out.println("No estas escribiendo bien el departamento");
                     }
@@ -83,4 +91,5 @@ public class MenuGeneral extends MenuAdmin {
         } while (resp != 3);
         in.close();
     }
+
 }

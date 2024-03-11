@@ -5,6 +5,7 @@ public class Proyecto extends MenuGeneral{
         Scanner in=new Scanner(System.in);
         MenuGeneral menu= new MenuGeneral();
 
+
         menu.escribir();
 
 
